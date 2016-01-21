@@ -10,10 +10,10 @@ router.post('/', function(req, res) {
     var fileName = name+'_'+version+'.zip';
     if (commitMsg === 'update_qual') {
         console.log('allez on update la qual');
-        var dl = spawn(process.cwd() + '/bash/hook.sh',[fileName,config.destinationFolder]);
+        var dl = spawn(process.cwd() + '/bash/hook.sh',[fileName,config.destinationFolder,name]);
  
         dl.stdout.on('end', function(data) {
-            console.log(' downloaded finished ');
+            console.log('downloaded finished ');
             console.log(name);
             console.log(fileName);
             console.log(version); 

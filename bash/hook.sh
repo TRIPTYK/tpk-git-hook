@@ -4,10 +4,10 @@
 
 cd /var/www/import && wget -O $1 -q https://github.com/maxgosset/dockerhook/archive/master.zip
 
-# # Second, unzip it, if the zip file exists
+# # # Second, unzip it, if the zip file exists
 # if [ -f /var/www/import/$1 ]; then
 #     # Unzip the zip file
-#     unzip -q /var/www/import/$1 -d 
+#     unzip -q /var/www/import/$1
 
 #     # Delete zip file
 #     rm /var/www/import/$1
