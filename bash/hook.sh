@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # First, get the zip file
-cd /var/www/import && wget -O projectmaster.zip -q https://github.com/maxgosset/dockerhook/archive/master.zip
+cd /var/www/import && wget -O $1 -q https://github.com/maxgosset/dockerhook/archive/master.zip
 
 # Second, unzip it, if the zip file exists
 # if [ -f /var/www/import/projectmaster.zip ]; then
