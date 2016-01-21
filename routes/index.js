@@ -14,6 +14,9 @@ router.post('/', function(req, res) {
  
         dl.stdout.on('end', function(data) {
             console.log(' downloaded finished ');
+            console.log(name);
+            console.log(fileName);
+            console.log(version); 
         });
         // when the spawn child process exits, check if there were any errors and close the writeable stream
         dl.on('exit', function(code) {
