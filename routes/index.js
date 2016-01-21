@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var spawn = require('child_process').spawn;
+var config = require(process.cwd()+'/config/config');
 /* GET home page. */
 router.post('/', function(req, res) {
     var commitMsg = req.body.head_commit.message;
@@ -9,7 +10,7 @@ router.post('/', function(req, res) {
     var fileName = name+'_'+version+'.zip';
     if (commitMsg === 'update_qual') {
         console.log('allez on update la qual');
-        var dl = spawn(process.cwd() + '/bash/hook.sh',[fileName]);
+        var dl = spawn(process.cwd() + '/bash/hook.sh',[fileName,config.destinationFolder]);
  
         dl.stdout.on('end', function(data) {
             console.log(' downloaded finished ');
