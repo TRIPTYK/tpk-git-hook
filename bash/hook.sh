@@ -59,7 +59,7 @@ if [ -f /var/www/import/$1 ]; then
     sed -i "s/$5/$4/g" /etc/nginx/sites-enabled/default
     if [ -f "/var/www/$3/$4/last.sql" ]; then
 		echo " add user and database mysql"
-		Q2="CREATE DATABASE IF NOT EXISTS sdfsd;"
+		Q2="CREATE DATABASE IF NOT EXISTS $4;"
 		SQL="${Q2}"
 		mysql -uroot -pMar10KartW11 -e "$SQL"
     fi
